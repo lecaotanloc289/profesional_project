@@ -1,0 +1,19 @@
+<!-- Find all -->
+const product_list = await Product.find()
+
+<!-- Find by id-->
+const product = await Product.find(req.body.id)
+
+<!-- Find and select some attribute | not all -->
+const product = await Product.find().select('name image category')
+
+<!-- Find and select without id -->
+const product = await Product.find().select('-_id')
+
+<!-- Find and using foreign key select information -->
+<!-- Select category detail for product -->
+const product = await Product.findById(req.params.id).populate('category'); 
+
+// If get some attribute => find().select('attribute1 attribute2')
+// Select without id => find().select(-_id) (minus _id)
+// Select what you want for your command
