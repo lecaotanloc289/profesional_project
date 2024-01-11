@@ -58,6 +58,15 @@ const product_schema = mongoose.Schema({
 
 });
 
+product_schema.virtual('id').get(function() 
+{
+    return this._id.toHexString();
+});
+
+product_schema.set('toJSON', {
+    virtual: true,
+});
+
 // Sử dụng Product trong tất cả các file của project | Global
 exports.Product = mongoose.model('Product', product_schema);
 

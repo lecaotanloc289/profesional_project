@@ -41,5 +41,5 @@ mongoose.connect(process.env.CONNECTION_STRING, {
 
 
 app.listen(2000, () => {
-    console.log('server in running http://localhost:2000/api/v1/products')
+    console.log('server in running http://localhost:2000/api/v1/')
 })

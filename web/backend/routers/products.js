@@ -5,11 +5,13 @@ const mongoose = require('mongoose');
 const express = require('express');
 const router = express.Router();
 
-    // get all product 
+   // get all product || by category
 router.get(`/` , async (req, res) => {
-    const products_list = await Product.find().select('name image category').populate('category');
-    if(!products_list) res.status(500).json({success: false})
-    res.send(products_list);
+    let filter = {};
+    filter = {category: req.query.categories.split(',')}
+    const products = await Product.find(filter).populate('category');
+    if(!products) res.status(500).json({success: false})
+    res.send(products)
 })
 
     // get a product by id and show category details
@@ -27,6 +29,7 @@ router.post(`/` , async (req, res) => {
 
     // Let, not const
     let product = new Product({
+        _id: req.body.id,
         name: req.body.name,
         description: req.body.description, 
         richDescription: req.body.richDescription, 
@@ -42,10 +45,10 @@ router.post(`/` , async (req, res) => {
     {
         new: true,
     })
-    product = await product.save();
-    if(!product) return res.status(500).send('The product cannot be created!');
+    new_product = await product.save();
+    if(!new_product) return res.status(500).send('The product cannot be created!');
 
-    res.send(product);
+    res.send(new_product);
 })
 
     // update product by id
@@ -95,7 +98,21 @@ router.delete('/:id', async (req, res) => {
     // count product
 router.get('/get/count', async (req, res) => {
         // count in this table
-    const product_count = await Product.countDocuments((count) => count)
+    const product_count = await Product.countDocuments()
+    if(!product_count) res.status(500).json({success: false})
+    res.send({
+        product_count: product_count,
+    })
 })
+
+    // get special product on main home page
+router.get('/get/featured/:count', async (req, res) => {
+    const count = req.params.count ? req.params.count : 0;
+    const featured_products = await Product.find({isFeatured: true}).limit(+count)
+    if(!featured_products) res.status(500).json({success: false})
+    res.send(featured_products)
+})
+
+ 
 
 module.exports = router;
