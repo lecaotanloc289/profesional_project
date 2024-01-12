@@ -53,7 +53,7 @@ router.post(`/` , async (req, res) => {
 
     // update product by id
 router.put('/:id', async (req, res,) => {
-        // check id before update
+       
     if(!mongoose.isValidObjectId(req.params.id)) {
         res.status(400).send('Invalid product id!');
     }
