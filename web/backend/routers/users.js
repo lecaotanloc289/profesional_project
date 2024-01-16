@@ -50,8 +50,8 @@ router.post('/', async(req, res) => {
 
 // login with email & password
 router.post('/:login', async (req, res) => {
-    const user = await User.findOne({email: req.body.email})
-    const secret = process.env.serect;
+    const user = await User.findOne({email: req.body.email});
+    var secret = process.env.serect ? process.env.secret : 'web-app-ecommerce';
     if(!user) return res.status(400).send("The user not found!");
     if(user && bcrypt.compareSync(req.body.password_hash, user.password_hash)){
         // using json web token with id
@@ -59,14 +59,14 @@ router.post('/:login', async (req, res) => {
             {
                 user_id: user.id
             }, 
-            
-            // using secrect key
+
+            // // using secrect key
             secret, 
 
-            // using limit time for jwt
-            {
-                expiresIn: '1d' // 1d - 1 day, 1w - 1 week
-            }
+            // // using limit time for jwt
+            // {
+            //     expiresIn: '1d' // 1d - 1 day, 1w - 1 week
+            // }
             
         )
         res.status(200).send({user: user.email, token: token})

@@ -9,16 +9,13 @@ app.use(cors());
 app.options('*', cors())
 require('dotenv/config');
 const auth_jwt = require('./helper/jwt');
-// const error_handler = require('./helper/error_handler');
+const error_handler = require('./helper/error-handler');
 
 // middleware
 app.use(body_parser.json());
 app.use(morgan('tiny'));
 app.use(auth_jwt);
-app.use((err, req, res, next) => {
-    if(err) return res.status(500).json({message: 'error in the server'})
-})
-// app.use(error_handler);
+app.use(error_handler);
 
 // Routers
 const product_router = require('./routers/products')
