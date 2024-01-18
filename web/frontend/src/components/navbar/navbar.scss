@@ -1,0 +1,43 @@
+@import '../../styles/global.scss';
+
+
+.navbar-top {
+    display: flex;
+    justify-content: space-between;
+    height: 24px;
+    margin: 12px auto;
+}
+
+.tools-support {
+    display: flex;
+    padding:4px;
+    a {
+        text-decoration: none;
+        color: #637381;
+        font-weight: 500;
+        p { 
+            margin: 0;
+            color: $primary-color;
+        }
+    }
+    p {
+        margin: 0;
+    }
+    us {
+        padding-top: -10px;
+    }
+    a, p, img {
+        margin-left: 12px;
+    }
+}
+
+.icon-glyph {
+    a {
+        img {
+            margin-right: 10px;
+        }
+    }
+}
+
+
+

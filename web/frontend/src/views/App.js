@@ -1,9 +1,13 @@
-import './App.scss';
+import Divider from '../components/Divider';
 import Navbar from '../components/navbar/navbar';
+import Headers from '../components/header/Header';
+import '../styles/global.scss'
+
 function App() {
   return (
-    <div>
+    <div >
       <Navbar/>
+      <Headers/>
     </div>
   );
 }

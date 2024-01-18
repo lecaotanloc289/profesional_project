@@ -47,30 +47,35 @@ h1-48-bold {
     --h1-48px-medium-font-weight: 500;
     --h1-48px-medium-letter-spacing: 0.20000000298023224px;
     --h1-48px-medium-line-height: 64px;
+    
     --h1-48px-regular-font-family: "Rubik-Regular", Helvetica;
     --h1-48px-regular-font-size: 48px;
     --h1-48px-regular-font-style: normal;
     --h1-48px-regular-font-weight: 400;
     --h1-48px-regular-letter-spacing: 0.20000000298023224px;
     --h1-48px-regular-line-height: 64px;
+
     --h1-56px-bold-font-family: "Rubik-Bold", Helvetica;
     --h1-56px-bold-font-size: 56px;
     --h1-56px-bold-font-style: normal;
     --h1-56px-bold-font-weight: 700;
     --h1-56px-bold-letter-spacing: 0.20000000298023224px;
     --h1-56px-bold-line-height: 72px;
+
     --h1-56px-medium-font-family: "Rubik-Medium", Helvetica;
     --h1-56px-medium-font-size: 56px;
     --h1-56px-medium-font-style: normal;
     --h1-56px-medium-font-weight: 500;
     --h1-56px-medium-letter-spacing: 0.20000000298023224px;
     --h1-56px-medium-line-height: 72px;
+
     --h1-56px-regular-font-family: "Rubik-Regular", Helvetica;
     --h1-56px-regular-font-size: 56px;
     --h1-56px-regular-font-style: normal;
     --h1-56px-regular-font-weight: 400;
     --h1-56px-regular-letter-spacing: 0.20000000298023224px;
     --h1-56px-regular-line-height: 72px;
+
     --h2-36px-bold-font-family: "Rubik-Bold", Helvetica;
     --h2-36px-bold-font-size: 36px;
     --h2-36px-bold-font-style: normal;
@@ -215,24 +220,28 @@ h1-48-bold {
     --h6-18px-regular-font-weight: 400;
     --h6-18px-regular-letter-spacing: 0.20000000298023224px;
     --h6-18px-regular-line-height: 20px;
+
     --h7-16px-bold-font-family: "Rubik-Bold", Helvetica;
     --h7-16px-bold-font-size: 16px;
     --h7-16px-bold-font-style: normal;
     --h7-16px-bold-font-weight: 700;
     --h7-16px-bold-letter-spacing: 0.17777778208255768px;
     --h7-16px-bold-line-height: 20px;
+
     --h7-16px-medium-font-family: "Rubik-Medium", Helvetica;
     --h7-16px-medium-font-size: 16px;
     --h7-16px-medium-font-style: normal;
     --h7-16px-medium-font-weight: 500;
     --h7-16px-medium-letter-spacing: 0.17777778208255768px;
     --h7-16px-medium-line-height: 20px;
+
     --h7-16px-regular-font-family: "Rubik-Regular", Helvetica;
     --h7-16px-regular-font-size: 16px;
     --h7-16px-regular-font-style: normal;
     --h7-16px-regular-font-weight: 400;
     --h7-16px-regular-letter-spacing: 0.17777778208255768px;
     --h7-16px-regular-line-height: 20px;
+
     --h8-14px-bold-font-family: "Rubik-Bold", Helvetica;
     --h8-14px-bold-font-size: 14px;
     --h8-14px-bold-font-style: normal;

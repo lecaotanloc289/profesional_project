@@ -11,6 +11,16 @@ const icons = {
 
     Checkbox_check: require('./Icon/Checkbox/Check.png'),
     Checkbox_uncheck: require('./Icon/Checkbox/Uncheck.png'),
+    Add: require('./Icon/Add.png'),
+    Archive: require('./Icon/Archive.png'),
+    Badge: require('./Icon/Badge.png'),
+    
+    Search: require('./Icon/Search.png'),
+    Cart: require('./Icon/Cart.png'),
+    Love: require('./Icon/Love.png'),
+    User: require('./Icon/User.png'),
+    
+    
 
 }
 
