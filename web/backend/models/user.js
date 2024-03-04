@@ -1,6 +1,7 @@
-import { Schema, model } from "mongoose";
+const mongoose = require('mongoose')
 
-const user_schema = new Schema({
+// Schema
+const user_schema = new mongoose.Schema({
     name: {
         type: String,
         require: true,
@@ -15,41 +16,43 @@ const user_schema = new Schema({
     },
     street: {
         type: String,
-        require: true,
+        default: '',
     },
     apartment: {
         type: String,
-        default: "",
+        default: '',
     },
     city: {
         type: String,
-        default: "",
+        default: '',
     },
     zip: {
         type: String,
-        default: "",
+        default: '',
     },
     country: {
         type: String,
-        default: "",
+        default: '',
     },
     phone: {
         type: Number,
-        default: "",
+        require: true,
     },
     is_admin: {
         type: Boolean,
         default: false,
     },
-});
+    likedProducts: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Product' }],
+})
 
-user_schema.virtual("id").get(function () {
-    return this._id.toHexString();
-});
+// using to get id, not _id
+user_schema.virtual('id').get(function () {
+    return this._id.toHexString()
+})
 
-user_schema.set("toJSON", {
+user_schema.set('toJSON', {
     virtuals: true,
-});
+})
 
-export const User = model("User", user_schema);
-exports.user_schema = user_schema;
+exports.User = mongoose.model('User', user_schema)
+exports.user_schema = user_schema

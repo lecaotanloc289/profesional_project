@@ -1,34 +1,35 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
 // Create schema
 const product_schema = mongoose.Schema({
     name: {
-        type: String, 
+        type: String,
         require: true,
     },
     description: {
-        type: String, 
-        require: true
-    },
-    richDescription: {
         type: String,
-        default: ''
+        require: true,
     },
     image: {
-        type: String, 
-        default: ''
+        type: String,
+        default: '',
     },
-    images: [{
-        type: String
-    }],
+    images: [
+        {
+            type: String,
+            default: '',
+        },
+    ],
     brand: {
         type: String,
-        default: ''
+        default: '',
     },
-    price: {
-        type: Number, 
-        default: 0
-    },
+    price: [
+        {
+            type: Number,
+            default: 0,
+        },
+    ],
     category: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Category',
@@ -37,36 +38,34 @@ const product_schema = mongoose.Schema({
     countInStock: {
         type: Number,
         require: true,
-        min: 0
+        min: 0,
     },
     rating: {
         type: Number,
         default: 0,
     },
-    numberReviews:  {
-        type: Number, 
+    numberReviews: {
+        type: Number,
         default: 0,
-    }, 
-    isFeatured: {
+    },
+    isBestseller: {
         type: Boolean,
-        default: false
+        default: false,
     },
     dateCreated: {
-        type: Date, 
-        default: Date.now, 
-    }
+        type: Date,
+        default: Date.now,
+    },
+})
 
-});
-
-product_schema.virtual('id').get(function() 
-{
-    return this._id.toHexString();
-});
+product_schema.virtual('id').get(function () {
+    return this._id.toHexString()
+})
 
 product_schema.set('toJSON', {
     virtual: true,
-});
+})
 
 // Sử dụng Product trong tất cả các file của project | Global
-exports.Product = mongoose.model('Product', product_schema);
-
+exports.Product = mongoose.model('Product', product_schema)
+exports.product_schema = product_schema

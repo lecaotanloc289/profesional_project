@@ -6,6 +6,9 @@ const logo = {
     twitter: require('./Logo/SocialMedia/Twitter.png'),
     youtube: require('./Logo/SocialMedia/YT.png'),
     instagram: require('./Logo/SocialMedia/Instagram.png'),
+    Linkedin: require('./Logo/SocialMedia/Linkedin.png'),
+    Github: require('./Logo/SocialMedia/Github.png'),
+    google: require('./Logo/SocialMedia/Google.png'),
 
     // Language
     US: require('./Logo/Language/US.png'),

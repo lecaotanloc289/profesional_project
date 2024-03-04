@@ -1,28 +1,4 @@
-@font-face {
-  font-family: 'Rubik';
-  src: local('Rubik Bold'), local('Rubik-Bold'),
-       url(../../public/fonts/Rubik/static/Rubik-Bold.ttf) format('tff');
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Rubik-Medium';
-  src: local('Rubik Medium'), local('Rubik-Medium'),
-       url(../../public/fonts/Rubik/static/Rubik-Medium.ttf) format('tff');
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Rubik-Regular';
-  src: local('Rubik Regular'), local('Rubik-Regular'),
-       url(../../public/fonts/Rubik/static/Rubik-Regular.ttf) format('tff');
-  font-weight: 400;
-  font-style: normal;
-}
 
-.max-width{
-  max-width: 80%;
-}
 * {
   box-sizing: border-box;
 }
@@ -40,6 +16,7 @@ body {
   font-size: 1.6rem;
   width: 100%;
 }
+
 // Fill action
 $primary-color: #43467F;
 $blue: #006FBB;
@@ -53,17 +30,17 @@ $red: #DE3618;
 $white: #ffffff;
 
 // Dark fill
-$title: #161D25;
-$ink: #212B36;
-$light: #454F5B;
-$lighter: #637381;
-$lightest91: #919EAB;
-$lightest95: #959EAD;
+$dark-title: #161D25;
+$dark-ink: #212B36;
+$dark-light: #454F5B;
+$dark-lighter: #637381;
+$dark-lightest91: #919EAB;
+$dark-lightest95: #959EAD;
 
 // White fill
 $darklight: #C4CDD5;
 $sky: #DFE3E8;
-$enoughtlight: #F4F6F8;
+$enoughlight: #F4F6F8;
 $lighter: #F9FAFB;
 
 // Fill light color 
@@ -76,15 +53,33 @@ $light-fill-yellow: #FDF9E5;
 $light-fill-orange: #FEF4EC;
 $light-fill-red: #FCEBE8;
 
-// Font
 
+
+// Font Rubik regular
+@font-face {
+  font-family: 'Rubik-Regular';
+  src: url('../fonts/static/Rubik-Regular.ttf');
+}
+
+
+// Font Rubik Medium
+@font-face {
+  font-family: 'Rubik-Medium';
+  src: url('../fonts/static/Rubik-Medium.ttf');
+}
+
+
+// Font Rubik Bold
+@font-face {
+  font-family: 'Rubik-Bold';
+  src: url('../fonts/static/Rubik-Bold.ttf');
+}
     
 
 :root {
-  :root {
-    --font-family-rubik: "Rubik-Regular", Helvetica;
-    --font-family-rubik-medium: "Rubik-Medium", Helvetica;
-    --font-family-rubik-bold: "Rubik-Bold", Helvetica;
+    --font-family-rubik: 'Rubik-Regular';
+    --font-family-rubik-medium: 'Rubik-Medium';
+    --font-family-rubik-bold: 'Rubik-Bold';
     
     --font-size-48px: 48px;
     --font-size-56px: 56px;
@@ -97,9 +92,322 @@ $light-fill-red: #FCEBE8;
     
     --line-height-48px: 64px;
     --line-height-56px: 72px;
-  }
+
+    // Colors
+    .primary-color {
+        color: #43467F;
+    } 
+    .blue {
+        color: #006FBB;
+    } 
+    .purpel {
+        color: #9C6ADE;
+    } 
+    .indigo  {
+        color: #5C6AC4;
+    } 
+    .teal {
+        color: #47C1BF;
+    } 
+    .green {
+        color: #50B83C;
+    } 
+    .yellow {
+        color: #EEC200;
+    } 
+    .orange {
+        color: #F49342;
+    } 
+    .red {
+        color: #DE3618;
+    } 
+    .white {
+        color: #ffffff;
+    } 
+    .dark-lightest95 {
+      color: #959EAD;
+    }
+
+    --lighter:  #F9FAFB;
+    --red: #DE3618;
+
+    --light-fill-blue: #E5EEF4;
+    --light-fill-purpel: #F5F0FC;
+    --light-fill-indigo : #EFF0F9;
+    --light-fill-teal: #EDF9F9;
+    --light-fill-green: #EDF8EB;
+    --light-fill-yellow: #FDF9E5;
+    --light-fill-orange: #FEF4EC;
+    --light-fill-red: #FCEBE8;
+
+    // Color 
+    .primary-color {color:#43467F;} 
+    .blue {color: #006FBB;}
+    .purpel {color: #9C6ADE;}
+    .indigo  {color: #5C6AC4;}
+    .teal {color: #47C1BF;}
+    .green {color: #50B83C;}
+    .yellow {color: #EEC200;}
+    .orange {color: #F49342;}
+    .red {color: #DE3618;}
+    .white {color: #ffffff;}
+    .black {
+      color: black;
+    }
+
+    .normal {
+      text-transform: none;
+
+    }
   
+    .darkfill-lightest {
+      color: #919EAB;
+    }
+
+    .primary-background {
+      background-color: #43467F;
+      
+    }
+
+    .indigo-background {
+      background-color: $indigo;
+    }
+
+    .dark-fill-light-background {
+      background-color: $dark-light;
+    }
+    .white-fill-lighter {
+      background-color: $lighter;
+    }
+    .blue {
+      color: #006FBB;;
+    }
+    .purpel {
+      color: #9C6ADE;;
+    }
+    .indigo  {
+      color: #5C6AC4;; 
+    }
+
+    .dark-title {color: #161D25;}
+    .dark-ink {color: #212B36;}
+    .dark-light {color: #454F5B;}
+    .dark-lighter {color: #637381;}
+    .dark-lightest91 {color: #919EAB;}
+    .dark-lightest95 {color: #959EAD;}
+    .dark-lighter5a {color: #5a7184;}
+
+    // White fill
+    .darklight {color: #C4CDD5;}
+    .sky {color: #DFE3E8;}
+    .enoughlight {color: #F4F6F8;}
+    .lighter {color: #F9FAFB;}
+
+    // Fill light color 
+    .light-fill-blue {color: #E5EEF4;}
+    .light-fill-purpel {color: #F5F0FC;}
+    .light-fill-indigo  {color: #EFF0F9;}
+    .light-fill-teal {color: #EDF9F9;}  
+    .light-fill-green {color: #EDF8EB;}
+    .light-fill-yellow {color: #FDF9E5;}
+    .light-fill-orange {color: #FEF4EC;}
+    .light-fill-red {color: #FCEBE8;}
+
+    .light-fill-blue-background {background-color: #E5EEF4;}
+    .light-fill-purpel-background {background-color: #F5F0FC;}
+    .light-fill-indigo-background  {background-color: #EFF0F9;}
+    .light-fill-teal-background {background-color: #EDF9F9;}
+    .light-fill-green-background {background-color: #EDF8EB;}
+    .light-fill-yellow-background {background-color: #FDF9E5;}
+    .light-fill-orange-background {background-color: #FEF4EC;}
+    .light-fill-red-background {background-color: #FCEBE8;}
+    // Border radius
+    .radius-4 {
+      border-radius: 4px;
+    }
+
+    .radius-8 {
+      border-radius: 8px;
+    }
+
+    .radius-12 {
+      border-radius: 12px;
+    }
+
+    .radius-16 {
+      border-radius: 16px;
+    }
+
+    .non-box-shadow {
+      box-shadow: none;
+    }
+
+    .border-1-solid {
+      border: 1px solid $enoughlight;
+    }
+    .mg40 {
+      margin: 40px 0;
+    }
+
+    .mg20 {
+      margin: 20px 0;
+    }
+
+    .mg10 {
+      margin: 10px 0;
+    }
+    
+    .mgt4 {
+      margin-top: 4px;
+    }
+
+    .mgpd0 {
+      margin: 0;
+      padding: 0;
+    }
+    .check-box {
+      span {
+          font-family: var(--font-family-rubik);
+          font-size: 14px;
+          line-height: 20px;
+          color: $indigo;
+          
+      }
+  
+      .MuiTypography-root {
+        color: $dark-title;
+
+      }
+    }
+    // text
+    .text-ellipsis {
+      white-space: nowrap;     /* Ngăn chặn quấn văn bản vào hàng mới */
+      overflow: hidden;        /* Ẩn phần văn bản bị tràn */
+      text-overflow: ellipsis; /* Hiển thị dấu elipsis (...) */
+      max-width: 160px;        /* Đặt chiều rộng tối đa của phần tử */
+    }
+
+    .textwrap2line {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      -webkit-line-clamp: 2; /* Số dòng tối đa bạn muốn hiển thị */
+    }
+    
+    // input
+    .input {
+      box-sizing: border-box;
+      height: 44px;
+      font-size: 20px;
+    }
+    .button44 {
+      height: 44px;
+    }
+
+    .button-contained {
+      background-color: $primary-color;
+      height: 48px;
+    }
+
+    .button-outlined {
+      height: 48px;
+      border-color: $indigo;
+    }
+
+    .button-48-lighter {
+      height: 48px;
+      background-color: $enoughlight;
+    }
+
+    .button-none {
+      border: none;
+      cursor: pointer;
+    }
+
+    // Text transform 
+    .normal {
+      text-transform: none;
+    }
+
+    .height48 {
+      height: 48px;
+    }
+
+    .height80 {
+      height: 80px;
+    }
+
+    .flex-space-between {
+      display: flex;
+      justify-content: space-between;
+    }
+    .space-around {
+      justify-content: space-around;
+    }
+    .flex-center {
+      display: flex;
+      justify-content: center;
+    }
+
+    .center {
+      align-items: center;
+    }
+
+    .flex {
+      display: flex;
+      align-items: center;
+    }
+
+    .flex-row {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .flex-column.center {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .flexcenter {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* Thiết lập 3 cột có độ rộng bằng nhau */
+      gap: 16px; /* Khoảng cách giữa các phần tử */
+    }
+
+    .link-nomal-cusor {
+      text-decoration: none;
+      text-transform: none;
+      cursor: pointer;
+      :hover {
+        text-transform: none;
+      }
+      ::view-transition-old {
+        text-transform: none;
+
+      }
+    }
+
+    .input div input {
+      height: 48px;
+      box-sizing: border-box;
+      font-size: 16px;
+      font-family: 'Rubik-Regular';
+    }
+
+
+
+    
+
 }
+    
+  
  /* Cấu hình các kiểu chữ cho h1 */
 .h1 {
   font-family: var(--font-family-rubik-medium);
@@ -148,9 +456,16 @@ $light-fill-red: #FCEBE8;
   line-height: 56px;
 }
 
+.h2.medium32 {
+  font-size: 32px;
+  font-family: var(--font-family-rubik-medium);
+  font-weight: 500;
+  line-height: 56px;
+}
+
 /* H3 Styles */
 .h3 {
-  font-family: var(--font-family-rubik-bold);
+  font-family: var(--font-family-rubik);
   font-size: 28px;
   font-weight: 700;
   letter-spacing: 0.20000000298023224px;
@@ -170,6 +485,15 @@ $light-fill-red: #FCEBE8;
 }
 
 /* H4 Styles */
+
+.h41 {
+  font-family: var(--font-family-rubik);
+  font-size: 16px;
+  letter-spacing: 0.20000000298023224px;
+  line-height: 32px;
+  color: #959EAD;
+}
+
 .h4 {
   font-family: var(--font-family-rubik-bold);
   font-size: 24px;
@@ -220,6 +544,14 @@ $light-fill-red: #FCEBE8;
   line-height: 20px;
 }
 
+.h61 {
+  font-family: var(--font-family-rubik);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.20000000298023224px;
+  line-height: 20px;
+}
+
 .h6.medium {
   font-family: var(--font-family-rubik-medium);
   font-weight: 500;
@@ -262,6 +594,13 @@ $light-fill-red: #FCEBE8;
   line-height: 20px;
 }
 
+.h81 {
+  font-family: var(--font-family-rubik);
+  font-size: 14px;
+  letter-spacing: 0.15555556118488312px;
+  line-height: 20px;
+}
+
 .h8.medium {
   font-family: var(--font-family-rubik-medium);
   font-weight: 500;
@@ -276,11 +615,10 @@ $light-fill-red: #FCEBE8;
 
 /* H9 Styles */
 .h9 {
-  font-family: var(--font-family-rubik-bold);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.1599999964237213px;
-  line-height: 16px;
+    font-family: var(--font-family-rubik-bold);
+    font-size: 12px;
+    letter-spacing: 0.1599999964237213px;
+    line-height: 16px;
 }
 
 .h9.medium {
@@ -293,6 +631,13 @@ $light-fill-red: #FCEBE8;
   font-family: var(--font-family-rubik);
   font-weight: 400;
   line-height: 16px;
+}
+
+.h22{
+  font-family: var(--font-family-rubik-medium);
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 20px;
 }
 
   
